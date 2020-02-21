@@ -1,0 +1,10 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =8
+let g:netrw_dirhist_1='/home/d02'
+let g:netrw_dirhist_2='/home/d02/Documents/auddit/src'
+let g:netrw_dirhist_3='/home/d02/Documents/auddit/src/tasks'
+let g:netrw_dirhist_4='/home/d02/Documents/auddit/src/tasks/scrape_reddit'
+let g:netrw_dirhist_5='/home/d02/Documents/auddit/src'
+let g:netrw_dirhist_6='/home/d02/Documents/auddit/src/tasks/text_to_speech'
+let g:netrw_dirhist_7='/home/d02/Documents/motoScript'
+let g:netrw_dirhist_8='/home/d02/Documents/motoScript/__pycache__'
