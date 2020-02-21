@@ -1,0 +1,49 @@
+[global_config]
+  focus = mouse
+  title_hide_sizetext = True
+  inactive_color_offset = 0.7083333333333334
+  always_split_with_profile = True
+  title_use_system_font = False
+  title_font = SF Mono 13
+[keybindings]
+[profiles]
+  [[default]]
+    background_color = "#282828"
+    cursor_color = "#aaaaaa"
+    font = Fira Code weight=453 13
+    foreground_color = "#ebdbb2"
+    show_titlebar = False
+    scrollbar_position = hidden
+    use_system_font = False
+  [[Calamity]]
+    allow_bold = False
+    background_color = "#2f2833"
+    background_darkness = 0.95
+    background_type = transparent
+    cursor_color = "#d5ced9"
+    font = SF Mono 13
+    foreground_color = "#d5ced9"
+    show_titlebar = False
+    scrollbar_position = hidden
+    palette = "#2f2833:#fc644d:#a5f69c:#e9d7a5:#3b79c7:#f92672:#74d3de:#d5ced9:#7e6c88:#fc644d:#a5f69c:#e9d7a5:#3b79c7:#f92672:#74d3de:#ffffff"
+    use_system_font = False
+[layouts]
+  [[default]]
+    [[[child0]]]
+      type = Window
+      parent = ""
+      order = 0
+      position = 107:65
+      maximised = False
+      fullscreen = False
+      size = 957, 550
+      title = d02@premis: ~
+      last_active_term = dc09693a-e1b9-4bf9-890e-11b87bf12e9f
+      last_active_window = True
+    [[[terminal1]]]
+      type = Terminal
+      parent = child0
+      order = 0
+      profile = Calamity
+      uuid = dc09693a-e1b9-4bf9-890e-11b87bf12e9f
+[plugins]
