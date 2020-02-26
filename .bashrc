@@ -123,8 +123,8 @@ alias .z='exit'
 alias .e='nautilus .'
 alias .vv='vim ~/.vimrc'
 alias .vb='vim ~/.bashrc'
-alias .sv='source ~/.vimrc && bash'
-alias .sb='source ~/.bashrc && bash'
+alias .sv='source ~/.vimrc && bash && exit'
+alias .sb='source ~/.bashrc && bash && exit'
 alias p='python3'
 alias v='vim'
 alias ff='fff'
@@ -199,6 +199,15 @@ if ! shopt -oq posix; then
   fi
 fi
 
+#custom display settings
+#xrandr --newmode "1536x864_60.00"  109.25  1536 1624 1784 2032  864 867 872 897 -hsync +vsync
+#xrandr --addmode eDP-1 "1536x864_60.00"
+
 
 ##bash prompt customization
-export PS1='\[\033[38;5;15m\] \[$(tput sgr0)\]\[\033[38;5;156m\]\u\[$(tput sgr0)\]\[\033[38;5;153m\]@\[$(tput sgr0)\]\[\033[38;5;156m\]\h\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]\[\033[38;5;50m\]\w\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]\[\033[38;5;227m\]$(git branch 2>/dev/null | sed -n "s/* \(.*\)/\1 /p")\[$(tput sgr0)\]λ '
+parse_git_branch() {
+    git branch 2>/dev/null | sed -n "s/* \(.*\)/[\1] /p"
+    #git branch 2>/dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/[\1]/p'
+}
+
+export PS1='\[\033[38;5;15m\] \[$(tput sgr0)\]\[\033[38;5;156m\]\u\[$(tput sgr0)\]\[\033[38;5;153m\]@\[$(tput sgr0)\]\[\033[38;5;156m\]\h\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]\[\033[38;5;50m\]\w\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]\[\033[38;5;227m\]$(parse_git_branch)\[$(tput sgr0)\]λ '

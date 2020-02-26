@@ -50,12 +50,12 @@ let g:airline_powerline_fonts = 0
 let mapleader=','
 
 set showmode
-set scrolloff=33                    "move text up a little (offset)
+"set scrolloff=33                   "move text up a little (offset)
 set wrap							"wrap lines
 set linebreak
 set textwidth=0
 set wrapmargin=0
-set number                          "show line numbers
+set number relativenumber           "show line numbers
 set mouse=a							"enable mouse support
 set ruler							"show row and column in statusbar
 set showmatch						"show matching brackets
@@ -114,7 +114,7 @@ let g:netrw_banner = 0
 let g:netrw_liststyle = 3
 let g:netrw_browse_split = 2
 let g:netrw_altv = 1
-let g:netrw_winsize = 20
+let g:netrw_winsize = 15
 let g:netrw_list_hide = '^\.'
 let g:netrw_hide = 1
 augroup ProjectDrawer
