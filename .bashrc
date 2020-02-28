@@ -121,18 +121,23 @@ alias sudo='sudo '
 alias .c='clear'
 alias .z='exit'
 alias .e='nautilus .'
-alias .vv='vim ~/.vimrc'
-alias .vb='vim ~/.bashrc'
-alias .sv='source ~/.vimrc && bash && exit'
+alias .vb='nvim ~/.bashrc'
+alias .vv='nvim ~/.vimrc'
+alias .vn='nvim ~/.config/nvim/init.vim'
 alias .sb='source ~/.bashrc && bash && exit'
+alias .sv='source ~/.vimrc && bash && exit'
+alias .sn='source ~/.config/nvim/init.vim && bash && exit'
 alias p='python3'
-alias v='vim'
+alias v='nvim'
+alias vim='nvim'
 alias ff='fff'
 alias nn='nnn'
 alias pip='pip3'
 alias python='python3'
 #update & upgrade
-alias upg='sudo apt update && sudo apt upgrade'
+alias upd='sudo apt update' 
+alias upl='apt list --upgradable' 
+alias upg='sudo apt upgrade' 
 #move copy remove interactively
 alias cp='cp -i'
 alias rm='rm -i'
@@ -198,10 +203,6 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
-
-#custom display settings
-#xrandr --newmode "1536x864_60.00"  109.25  1536 1624 1784 2032  864 867 872 897 -hsync +vsync
-#xrandr --addmode eDP-1 "1536x864_60.00"
 
 
 ##bash prompt customization
