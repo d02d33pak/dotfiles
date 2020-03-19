@@ -73,28 +73,6 @@ xterm*|rxvt*)
 esac
 
 
-
-# Favourites (Bookmarks) (keys 1-9) (dir or file)
-export FFF_FAV1=~/
-export FFF_FAV2=~/Desktop
-export FFF_FAV3=~/Documents
-export FFF_FAV4=~/Downloads
-export FFF_FAV5=~/Pictures
-
-# File format.
-# Customize the item string.
-# Format ('%f' is the current file): "str%fstr"
-# Example (Add a tab before files): FFF_FILE_FORMAT="\t%f"
-export FFF_FILE_FORMAT="  %f"
-
-# Mark format.
-# Customize the marked item string.
-# Format ('%f' is the current file): "str%fstr"
-# Example (Add a ' >' before files): FFF_MARK_FORMAT="> %f"
-export FFF_MARK_FORMAT=">> %f"
-
-
-
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
@@ -136,6 +114,7 @@ alias pip='pip3'
 alias python='python3'
 #update & upgrade
 alias upd='sudo apt update' 
+alias upr='sudo apt autoremove'
 alias upl='apt list --upgradable' 
 alias upg='sudo apt upgrade' 
 #move copy remove interactively
@@ -156,6 +135,7 @@ alias .1='cd ~/Desktop'
 alias .2='cd ~/Downloads'
 alias .3='cd ~/Documents'
 alias .4='cd ~/Pictures'
+alias .5='cd ~/Documents/projects/'
 
 
 # Favourites (Bookmarks) (keys 1-9) (dir or file)

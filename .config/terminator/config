@@ -20,7 +20,7 @@
     background_color = "#2f2833"
     background_darkness = 0.95
     background_type = transparent
-    cursor_color = "#fce94f"
+    cursor_color = "#000000"
     font = SF Mono 14
     foreground_color = "#d5ced9"
     show_titlebar = False
