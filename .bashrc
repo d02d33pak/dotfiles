@@ -185,10 +185,14 @@ if ! shopt -oq posix; then
 fi
 
 
-##bash prompt customization
+# bash prompt customization
 parse_git_branch() {
     git branch 2>/dev/null | sed -n "s/* \(.*\)/[\1] /p"
     #git branch 2>/dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/[\1]/p'
 }
 
-export PS1='\[\033[38;5;15m\] \[$(tput sgr0)\]\[\033[38;5;156m\]\u\[$(tput sgr0)\]\[\033[38;5;153m\]@\[$(tput sgr0)\]\[\033[38;5;156m\]\h\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]\[\033[38;5;50m\]\w\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]\[\033[38;5;227m\]$(parse_git_branch)\[$(tput sgr0)\]λ '
+# promt with user and host name
+# export PS1='\[\033[38;5;15m\] \[$(tput sgr0)\]\[\033[38;5;156m\]\u\[$(tput sgr0)\]\[\033[38;5;153m\]@\[$(tput sgr0)\]\[\033[38;5;156m\]\h\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]\[\033[38;5;50m\]\w\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]\[\033[38;5;227m\]$(parse_git_branch)\[$(tput sgr0)\]λ '
+
+
+export PS1='\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]\[\033[38;5;50m\]\w\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]\[\033[38;5;227m\]$(parse_git_branch)\[$(tput sgr0)\]λ '
