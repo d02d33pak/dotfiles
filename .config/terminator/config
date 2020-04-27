@@ -14,6 +14,7 @@
     foreground_color = "#ebdbb2"
     show_titlebar = False
     scrollbar_position = hidden
+    scrollback_lines = 1000
     use_system_font = False
   [[Calamity]]
     allow_bold = False
@@ -36,7 +37,7 @@
       position = 107:65
       maximised = False
       fullscreen = False
-      size = 957, 550
+      size = 1093, 633
       title = d02@premis: ~
       last_active_term = dc09693a-e1b9-4bf9-890e-11b87bf12e9f
       last_active_window = True

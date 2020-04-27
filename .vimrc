@@ -98,6 +98,8 @@ nnoremap <Space>v "+p
 nnoremap <Space>s :w<CR>
 nnoremap <Space>w :wq<CR>
 nnoremap <Space>q :q!<CR>
+nnoremap <Space>o o<Esc>k
+nnoremap <Space>O O<Esc>k
 
 
 """"Split Settings
@@ -145,5 +147,4 @@ nnoremap - <C-x>
 
 syntax on
 syntax enable
-
 

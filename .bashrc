@@ -94,7 +94,7 @@ alias la='ls -A'
 alias l='ls -CF'
 
 
-#custom aliases
+# custom aliases
 alias sudo='sudo '
 alias .c='clear'
 alias .z='exit'
@@ -105,19 +105,20 @@ alias .vn='nvim ~/.config/nvim/init.vim'
 alias .sb='source ~/.bashrc && bash && exit'
 alias .sv='source ~/.vimrc && bash && exit'
 alias .sn='source ~/.config/nvim/init.vim && bash && exit'
+alias vp='vimgolf put'
 alias p='python3'
+alias n='node'
 alias v='nvim'
 alias vim='nvim'
-alias ff='fff'
 alias nn='nnn'
 alias pip='pip3'
 alias python='python3'
-#update & upgrade
+# update & upgrade
 alias upd='sudo apt update' 
 alias upr='sudo apt autoremove'
 alias upl='apt list --upgradable' 
 alias upg='sudo apt upgrade' 
-#move copy remove interactively
+# move copy remove interactively
 alias cp='cp -i'
 alias rm='rm -i'
 alias mv='mv -i'
@@ -126,7 +127,7 @@ cdl() {
     cd "$@" && ls
 }
 
-#move quickly to dirs
+# move quickly to dirs
 alias ..='cd ..'
 alias ...='cd ../..'
 alias cd..='cd ..'
@@ -136,28 +137,7 @@ alias .2='cd ~/Downloads'
 alias .3='cd ~/Documents'
 alias .4='cd ~/Pictures'
 alias .5='cd ~/Documents/projects/'
-
-
-# Favourites (Bookmarks) (keys 1-9) (dir or file)
-export FFF_FAV1=~/
-export FFF_FAV2=~/Desktop
-export FFF_FAV3=~/Documents
-export FFF_FAV4=~/Downloads
-export FFF_FAV5=~/Pictures
-
-# File format.
-# Customize the item string.
-# Format ('%f' is the current file): "str%fstr"
-# Example (Add a tab before files): FFF_FILE_FORMAT="\t%f"
-export FFF_FILE_FORMAT="  %f"
-
-# Mark format.
-# Customize the marked item string.
-# Format ('%f' is the current file): "str%fstr"
-# Example (Add a ' >' before files): FFF_MARK_FORMAT="> %f"
-export FFF_MARK_FORMAT=">> %f"
-
-
+alias .6='cd ~/Videos'
 
 
 # Add an "alert" alias for long running commands.  Use like so:
@@ -191,8 +171,14 @@ parse_git_branch() {
     #git branch 2>/dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/[\1]/p'
 }
 
-# promt with user and host name
+# function to display only last 2 dirs of pwd
+PWD() {
+    pwd | awk -F\/ '{print $(NF-1),$(NF)}' | sed "s/ /\\//"
+}
+
+# promt with user and host name and complete directory
 # export PS1='\[\033[38;5;15m\] \[$(tput sgr0)\]\[\033[38;5;156m\]\u\[$(tput sgr0)\]\[\033[38;5;153m\]@\[$(tput sgr0)\]\[\033[38;5;156m\]\h\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]\[\033[38;5;50m\]\w\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]\[\033[38;5;227m\]$(parse_git_branch)\[$(tput sgr0)\]λ '
 
+export PS1='\[\033[38;5;15m\] \[$(tput sgr0)\]\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]\[\033[38;5;50m\]$(PWD)\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]\[\033[38;5;227m\]$(parse_git_branch)\[$(tput sgr0)\]λ '
 
-export PS1='\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]\[\033[38;5;50m\]\w\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]\[\033[38;5;227m\]$(parse_git_branch)\[$(tput sgr0)\]λ '
+
