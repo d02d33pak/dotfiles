@@ -1,0 +1,39 @@
+
+# custom mapping by d02
+unmap h H l L o O
+map h goBack
+map l goForward
+map H scrollLeft
+map L scrollRight
+map o Vomnibar.activateInNewTab
+map O Vomnibar.activate
+
+
+# custom search engine completion
+w: https://www.wikipedia.org/w/index.php?title=Special:Search&search=%s Wikipedia
+g: https://www.google.com/search?q= Google
+y: https://www.youtube.com/results?search_query= Youtube
+d: https://www.dictionary.com/browse/%s Dictionary
+gh: https://github.com/search?q= GitHub
+az: https://www.amazon.com/s/?field-keywords=%s Amazon
+
+# custom CSS
+div > .vimiumHintMarker {
+  padding: 2px 3px;
+  background-color: #feda31;
+  border: 0;
+  border-radius: 2px;
+  box-shadow: inset 0 -2px 0 #b39922;
+  background-image: none;
+}
+
+div > .vimiumHintMarker span {
+  font-size: 11px;
+  font-weight: bold;
+  text-shadow: none;
+  color: #4a400e;
+}
+
+div > .vimiumHintMarker > .matchingCharacter {
+  color: #dcbc2a;
+}
