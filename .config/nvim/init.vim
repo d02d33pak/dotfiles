@@ -18,29 +18,37 @@ filetype off                    "required
 
 """Airline settings
 let g:airline_powerline_fonts = 1
+let g:airline_theme='papercolor'
 
 """Set the runtime path to include Vundle and initialize
 set rtp+=~/.config/nvim/bundle/Vundle.vim
 call vundle#begin()             "required
 Plugin 'VundleVim/Vundle.vim'   "required
 
-Plugin 'dracula/vim'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 Plugin 'tpope/vim-fugitive'
 Plugin 'git://git.wincent.com/command-t.git'
 Plugin 'sheerun/vim-polyglot'
-Plugin 'vim-airline/vim-airline'
+Plugin 'junegunn/rainbow_parentheses.vim'
 Plugin 'https://tpope.io/vim/commentary.git'
 Plugin 'https://tpope.io/vim/surround.git'
 Plugin 'https://github.com/airblade/vim-gitgutter.git'
 Plugin 'https://github.com/Raimondi/delimitMate'
-Plugin 'junegunn/rainbow_parentheses.vim'
+
+"""Themes
+Plugin 'dracula/vim'
+Plugin 'sonph/onehalf', { 'rtp': 'vim' }
+Plugin 'NLKNguyen/papercolor-theme'
+Plugin 'https://github.com/morhetz/gruvbox'
 
 call vundle#end()               "required
 filetype plugin indent on       "required
 
 
 """Setting color scheme [theme]
-colorscheme dracula
+set background=light
+colorscheme papercolor
 
 
 """Rainbow Parentheses and auto invoke on load
@@ -66,6 +74,7 @@ set wrapmargin=0
 set number                      "show line numbers
 set mouse=a                     "enable mouse support
 set ruler                       "show row and column in statusbar
+set colorcolumn=80              "show vertical ruler line at 80 chars
 set showmatch                   "show matching brackets
 
 set autochdir                   "automatically change current directory path
@@ -81,7 +90,7 @@ set expandtab                   "convert tab to spaces
 set shiftwidth=4                "indent spaces
 
 set autoindent                  "auto indent
-set smartindent                 "insert indent after {[( 
+set smartindent                 "insert indent after {[(
 
 
 """Search Settings
@@ -109,6 +118,9 @@ nnoremap <silent> <Space>[ :exe "vertical resize " . (winwidth(0) * 2/3)<CR>
 """Key Bindings
 nnoremap j gj
 nnoremap k gk
+
+"""Open file under cursor in VSpilt
+map gv :vertical wincmd f<CR>
 
 
 """Space bindings
@@ -146,4 +158,3 @@ vnoremap > >gv
 """Easier increment/decrement
 nnoremap + <C-a>
 nnoremap - <C-x>
-
