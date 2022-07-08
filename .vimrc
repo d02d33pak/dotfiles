@@ -20,11 +20,13 @@ filetype off                    "required
 let g:airline_powerline_fonts = 1
 let g:airline_theme='papercolor'
 
+
 """Set the runtime path to include Vundle and initialize
 set rtp+=~/.config/nvim/bundle/Vundle.vim
 call vundle#begin()             "required
 Plugin 'VundleVim/Vundle.vim'   "required
 
+Plugin 'junegunn/goyo.vim'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'tpope/vim-fugitive'
@@ -35,6 +37,7 @@ Plugin 'https://tpope.io/vim/commentary.git'
 Plugin 'https://tpope.io/vim/surround.git'
 Plugin 'https://github.com/airblade/vim-gitgutter.git'
 Plugin 'https://github.com/Raimondi/delimitMate'
+Plugin 'neoclide/coc.nvim', {'branch': 'release'}
 
 """Themes
 Plugin 'dracula/vim'
@@ -47,8 +50,13 @@ filetype plugin indent on       "required
 
 
 """Setting color scheme [theme]
-set background=light
+set background=dark
 colorscheme papercolor
+
+
+"""Function to randomly set a colorscheme
+let themes = ['darkblue', 'dracula', 'gruvbox', 'onehalfdark', 'onehalflight', 'papercolor', 'torte']
+nnoremap <silent> <Space>t :exe 'colorscheme' themes[rand() % (len(themes) - 1 ) ]<CR>
 
 
 """Rainbow Parentheses and auto invoke on load
@@ -111,13 +119,14 @@ let g:netrw_hide=1              "show not-hidden files
 
 
 """Resize Vertical Split
-nnoremap <silent> <Space>] :exe "vertical resize " . (winwidth(0) * 3/2)<CR>
-nnoremap <silent> <Space>[ :exe "vertical resize " . (winwidth(0) * 2/3)<CR>
+nnoremap <silent> <Space>= :exe "vertical resize " . (winwidth(0) * 3/2)<CR>
+nnoremap <silent> <Space>- :exe "vertical resize " . (winwidth(0) * 2/3)<CR>
 
 
 """Key Bindings
 nnoremap j gj
 nnoremap k gk
+
 
 """Open file under cursor in VSpilt
 map gv :vertical wincmd f<CR>
@@ -130,8 +139,12 @@ nnoremap <Space>v "+p
 nnoremap <Space>s :w<CR>
 nnoremap <Space>w :wq<CR>
 nnoremap <Space>q :q!<CR>
-nnoremap <Space>o o<Esc>k
-nnoremap <Space>O O<Esc>k
+nnoremap <Space>o mm o<Esc>`m
+nnoremap <Space>O mm O<Esc>`m
+nnoremap <Space>, :nohl<CR>
+nnoremap <silent><Space><Space> :Goyo<CR>
+
+let g:goyo_width = 100
 
 
 """Center display after searching
@@ -158,3 +171,4 @@ vnoremap > >gv
 """Easier increment/decrement
 nnoremap + <C-a>
 nnoremap - <C-x>
+
